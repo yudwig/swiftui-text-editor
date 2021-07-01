@@ -9,9 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var text: String = "place holder."
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack(content: {
+            setting
+            editor
+        })
+        .padding()
+    }
+    
+    var setting: some View {
+        return Text("settings")
+    }
+    
+    var editor: some View {
+        return TextEditor(text: $text)
     }
 }
 
