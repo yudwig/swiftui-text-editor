@@ -31,17 +31,15 @@ struct ContentView: View {
         VStack(content: {
             Text("settings").multilineTextAlignment(.leading)
             ColorPicker("Foreground color", selection: $color)
-            VStack(content: {
-                Text("Font size")
-                Slider(
-                    value: $fontSize,
-                    in: 0...50,
-                    step: 5,
-                    onEditingChanged: { editing in
-                        isEditingFontSize = editing
-                    }
-               )
-            })
+            Text("Font size")
+            Slider(
+                value: $fontSize,
+                in: 5...50,
+                step: 5,
+                onEditingChanged: { editing in
+                    isEditingFontSize = editing
+                }
+           )
         })
     }
     
